@@ -1,2 +1,2 @@
-<bold> Frida: </bold>
+# Frida: 
 Estas son mis actividades 
