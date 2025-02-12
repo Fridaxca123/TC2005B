@@ -1,0 +1,62 @@
+body {
+    background-color: #f1e2f5;
+    text-align: left;
+    font-family: 'Arial', sans-serif; 
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #4b0082; 
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1rem; 
+    color: #333;
+}
+
+strong {
+    font-weight: bold;
+    color: #d2691e; 
+}
+
+ul, ol {
+    margin-left: 20px;
+    font-size: 1rem;
+    color: #444;
+}
+
+aside img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #4b0082; 
+    margin-left: 20px;
+}
+
+div, footer, header {
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+}
+
+/* Estilos de ID específico */
+#Introduccion {
+    background-color: #e6e6fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+a {
+    color: #008080; 
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline; 
+}
+* {
+    box-sizing: border-box;
+}
