@@ -7,9 +7,8 @@ body {
 }
 header {
     display: flex;
-    align-items: center; /* Alinea verticalmente la imagen y el texto */
-    gap: 400px; /* Espacio entre el título y la imagen */
-}
+    align-items: center; 
+    gap: 400px; }
 
 h1, h2 {
     margin-bottom: 20px;
