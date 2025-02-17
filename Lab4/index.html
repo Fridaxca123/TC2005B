@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratorio 4: Frida</title>
     <link rel="stylesheet" href="main.css">
+    <script src="intojs.js" defer></script>
     <style>
         h1 {
             color: #4b0082; 
@@ -13,24 +14,32 @@
 </head>
 <body>
     <header>
-        <h1>Laboratorio 3: CSS</h1>
+        <h1>Laboratorio 4: Javascript</h1>
+        <aside><img src="download.jpeg" alt="Imagen de perfil"></aside>
     </header>
-    
-    <div class="container">
-        <aside>
-            <img src="download.jpeg" alt="Imagen de perfil">
-        </aside>
-    
-        <section> 
-            <div id="Introduccion">
-                <h2>¿Quién soy yo?</h2>
-                <p>Hola, mi nombre es <strong>Frida</strong>. Actualmente estoy en 4to semestre de la carrera de ITC.</p>
-                <p>Algunos de mis hobbies incluyen nadar, pintar en acuarela y ver documentales.</p>
-                <p>Me gusta viajar y he visitado 13 países, pero mi ciudad favorita siempre es San Diego.</p>
-            </div>
-        </section>
-    </div>
-
+    <section>
+    <h2>Ejercicios:</h2>
+    <p><strong>1. Tabla de cuadrados y cubos</strong></p>
+    <div id="tabla-container"></div> 
+    <p><strong>2. Suma aleatoria</strong></p>
+    <button id="start-sum">Iniciar suma</button>
+    <p id="result"></p>
+    <p><strong>3. Contar numeros</strong></p>
+    <p>*Ingresa los numeros separados por comas</p>
+    <input type="text" id="numerosInput" placeholder="Ejemplo: -2, 0, 5, -8, 3">
+    <button onclick="procesarNumeros()">Contar</button>
+    <p id="resultado"></p>
+    <p><strong>4.Promedio</strong></p>
+    <p>Ingresa filas de números separadas por comas. Cada fila debe estar separada por un punto y coma (;)</p>
+    <input type="text" id="matrizInput" placeholder="Ejemplo: 1,2,3;4,5,6;7,8,9">
+    <button onclick="calcularPromedios()">Calcular Promedios</button>
+    <p id="resultadoPromedios"></p>
+    <p><strong>5. Inverso</strong></p>
+    <p>Ingresa un número para invertir sus dígitos:</p>
+    <input type="number" id="numeroInput" placeholder="Ejemplo: 1234">
+    <button onclick="calcularInverso()">Invertir</button>
+    <p id="resultadoInverso"></p>
+    </section>
     <section>
         <h2>Preguntas: </h2>
         <p><strong>¿Que diferencias y semejanzas existen entre Java y Javascript? </strong></p>
@@ -51,13 +60,13 @@
         <p><strong>¿Qué metodos tienen los arreglos?</strong></p>
         <p>Algunos de los metodos para arreglo son: </p>
         <ul>
-            <il>push(valos): Agrega al final de un arreglo</il>
-            <il>pop(): Elimina o devuelve el ultimo elemento</il>
-            <il>shift(): Elimina o devuelve el primer elemento</il>
-            <il>unshift(valor): Agrega un elemento al inicio</il>
+            <li>push(valos): Agrega al final de un arreglo</li>
+            <li>pop(): Elimina o devuelve el ultimo elemento</li>
+            <li>shift(): Elimina o devuelve el primer elemento</li>
+            <li>unshift(valor): Agrega un elemento al inicio</li>
         </ul>
         <p><strong>¿Cómo se declara una variable con alcance local dentro de una función?</strong></p>
-        <p>Para devlara una variable con alcanace local se usa let y const</p>
+        <p>Para declarar una variable con alcanace local se usa let y const. </p>
         <p><strong>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</strong></p>
         <p>Usar variables globales dentro de funciones puede parecer conveniente, pero introduce riesgos 
             de mantenimiento, errores difíciles de depurar y posibles conflictos. La mejor práctica 

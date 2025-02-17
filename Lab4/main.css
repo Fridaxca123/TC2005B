@@ -5,6 +5,11 @@ body {
     padding: 20px;
     line-height: 1.6;
 }
+header {
+    display: flex;
+    align-items: center; /* Alinea verticalmente la imagen y el texto */
+    gap: 400px; /* Espacio entre el título y la imagen */
+}
 
 h1, h2 {
     margin-bottom: 20px;
@@ -22,7 +27,7 @@ strong {
     color: #d2691e; 
 }
 
-ul, ol {
+ul {
     margin-left: 20px;
     font-size: 1rem;
     color: #444;
@@ -30,18 +35,11 @@ ul, ol {
 
 aside img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border: 3px solid #4b0082; 
     margin-left: 20px;
-}
-
-#Introduccion, #infoPersonal, header {
-    padding: 15px;
-    margin: 10px 0;
-    border: 2px solid #ccc;
-    border-radius: 8px;
 }
 
 a {
@@ -54,16 +52,23 @@ a:hover {
 * {
     box-sizing: border-box;
 }
-.container {
-    display: flex;
-    align-items: flex-start; /* Alinea los elementos en la parte superior */
-    gap: 20px; /* Espacio entre aside y section */
+button, #start-sum {
+    background-color: #e196f6;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid black;
+    width: auto; 
+    padding: 14px 20px; 
+    display: inline-block; 
+    cursor: pointer;
+    text-align: center;
 }
-
-aside {
-    flex: 0 0 160px; /* Define el ancho fijo del aside */
-}
-
-section {
-    flex: 1; /* Ocupa el espacio restante */
+input[type="text"], input[type="number"] {
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid black;
+    width: 100%;
+    max-width: 500px; /* Puedes ajustarlo según lo necesites */
+    margin-top: 10px;
 }
