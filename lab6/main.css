@@ -1,48 +1,14 @@
 body {
     background-color: #f1e2f5;
     text-align: left;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Roboto Flex", sans-serif;
     padding: 20px;
     line-height: 1.6;
 }
 
 header {
     display: flex;
-    align-items: center; 
-    gap: 300px; }
-
-h1, h2 {
-    margin-bottom: 20px;
-    color: #4b0082;
+    align-items: left; 
+    gap: 0px; 
 }
 
-p {
-    margin-bottom: 15px;
-    font-size: 1rem;
-    color: #333;
-}
-
-strong {
-    font-weight: bold;
-    color: #d2691e;
-}
-
-
-aside img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border: 3px solid #4b0082;
-    margin-left: 20px;
-}
-
-* {
-    box-sizing: border-box;
-}
- 
-img {
-    border-radius: 8px;
-    width: 30%;
-    height: 30%;
-}

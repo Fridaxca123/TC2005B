@@ -4,45 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratorio 5: Frida</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body class="container">
     <header class="section">
         <h1 class="title">Laboratorio 6: Programación orientada a eventos</h1>
-        <aside>
-            <img src="download.jpeg" alt="Imagen de perfil">
-        </aside>
     </header>
+
+    <section class="section">
+        <h2 class="subtitle">CuteAnimal.com</h2>
+        <p>Hola, somos la empresa <strong>CuteAnimals.com</strong>, 
+            una empresa mexicana dedicada a la venta de peluches. 
+            Actualmente no contamos con una tienda física, sin embargo,
+            puedes adquirir nuestros productos en nuestra tienda digital. 
+            Los envíos nacionales toman 1 semana y los internacionales 2
+            semanas aproximadamente.</p>
+        <div class="columns is-multiline" id="product-list">
+            <div class="column is-4">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="img1.jpeg" alt="Imagen igor">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-5">Igor</p>
+                        <p class="subtitle">$200</p>
+                        <button class="button is-primary add-to-cart" data-price="200">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="img2.jpeg" alt="Imagen pollito">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-5">Pollito</p>
+                        <p class="subtitle">$150</p>
+                        <button class="button is-primary add-to-cart" data-price="150">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="img3.jpeg" alt="Imagen capibara">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-5">Capibara</p>
+                        <p class="subtitle">$180</p>
+                        <button class="button is-primary add-to-cart" data-price="180">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    <section>
-        <div id="ParteInicial">
-            <h2 class="subtitle">CuteAnimals.com</h2>
-            <p>Hola, somos la empresa <strong>CuteAnimals.com</strong>, una empresa dedicada 
-                a la venta de peluches.</p>
-            <p>Actualmente no contamos con  locaciones física, pero puede adquirir nuestros
-                 productos en la tienda en linea. Los tiempos de entrega son desde 1 semana 
-                en envios nacionales y dos en internacionales. </p>
-        </div>
-    </section>
-
     <section class="section">
-        <h2 class="subtitle">Animales cute</h2>
-        <div class="container">
-            <div id="carousel-demo" class="carousel">
-                <div class="carouselPic"><img src="img1.jpeg" alt="Imagen igor"></div>
-                <div class="carouselPic"><img src="img2.jpeg" alt="Imagen pollito"></div>
-                <div class="carouselPic"><img src="img3.jpeg" alt="Imagen capibara"></div>
-            </div>            
-        </div>
-    </section>
-
-    <section class="section">
-        <h2 class="subtitle">Preguntas:</h2>
-        <p><strong>Describe Material Design:</strong></p>
-        <p>Material Design es un sistema de diseño desarrollado por Google que proporciona una guía visual y de experiencia de usuario basada en principios realistas, como el uso de sombras, profundidad y animaciones suaves.</p>
+        <h2 class="subtitle">Carrito de Compras</h2>
+        <p>Total: <strong id="total-price">$0</strong></p>
     </section>
 
     <footer class="section">
@@ -54,16 +81,24 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    bulmaCarousel.attach('#carousel-demo', {
-        slidesToScroll: 1,
-        slidesToShow: 1,
-        infinite: true,
-        autoplay: true
-    });
-});
+        document.addEventListener("DOMContentLoaded", function () {
+            let totalPrice = 0;
+            const totalElement = document.getElementById("total-price");
+
+            document.querySelectorAll(".add-to-cart").forEach(button => {
+                button.addEventListener("click", function () {
+                    let price = parseInt(this.getAttribute("data-price"));
+                    totalPrice += price;
+                    totalElement.textContent = `$${totalPrice}`;
+                });
+            });
+        });
     </script>
 </body>
 </html>
+
+      
+
+    
+    
