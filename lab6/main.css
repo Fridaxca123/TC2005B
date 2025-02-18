@@ -12,3 +12,9 @@ header {
     gap: 0px; 
 }
 
+ 
+img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
