@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Fridaxca123/TC2005B/issues"
   },
-  "homepage": "https://github.com/Fridaxca123/TC2005B#readme"
+  "homepage": "https://github.com/Fridaxca123/TC2005B#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
