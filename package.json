@@ -1,0 +1,22 @@
+{
+  "name": "tc2005b",
+  "version": "1.0.0",
+  "description": "laboratorios de TC",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fridaxca123/TC2005B.git"
+  },
+  "keywords": [
+    "Tc2005B"
+  ],
+  "author": "Frida Vargas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fridaxca123/TC2005B/issues"
+  },
+  "homepage": "https://github.com/Fridaxca123/TC2005B#readme"
+}
