@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 5: Frida</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body class="container">
+    <header class="section">
+        <h1 class="title">Laboratorio 6: Programación orientada a eventos</h1>
+    </header>
+
+    <section class="section">
+        <h2 class="subtitle">CuteAnimalsgo.com</h2>
+        <p>Hola, somos la empresa <strong>CuteAnimals.com</strong>, 
+            una empresa mexicana dedicada a la venta de peluches. 
+            Actualmente no contamos con una tienda física, sin embargo,
+            puedes adquirir nuestros productos en nuestra tienda digital. 
+            Los envíos nacionales toman 1 semana y los internacionales 2
+            semanas aproximadamente.</p>
+        <div class="columns is-multiline" id="product-list">
+            <div class="column is-4">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="/css/img1.jpeg" alt="Imagen igor">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-5">Igor</p>
+                        <p class="subtitle">$200</p>
+                        <button class="button is-primary add-to-cart" data-price="200">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="/css/img2.jpeg" alt="Imagen pollito">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-5">Pollito</p>
+                        <p class="subtitle">$150</p>
+                        <button class="button is-primary add-to-cart" data-price="150">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="/css/img3.jpeg" alt="Imagen capibara">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-5">Capibara</p>
+                        <p class="subtitle">$180</p>
+                        <button class="button is-primary add-to-cart" data-price="180">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2 class="subtitle">Carrito de Compras</h2>
+        <p>Total: <strong id="total-price">$0</strong></p>
+    </section>
+
+    <section class="Preguntas">
+        <p><strong>¿Por qué es una buena práctica usar JavaScript
+             para checar que sean válidos los inputs de las formas antes 
+             de enviar los datos al servidor?</strong></p>
+        <p>El validar los input es importante ya que ayuda a mejorar la
+            experiencia del usuario al brindar un mejor enfoque al cliente.
+            Tambien ayuda a facilitar los errores debido a que corrige los 
+            errores sin que el usuario tenga que corregir la página
+        </p>
+        <p><strong>¿Cómo puedes saltarte la seguridad de validaciones hechas 
+            con JavaScript?</strong></p>
+        <ol><li>Desactivando JavaScript</li>
+            <li>Modificando el código en el navegador</li>
+            <li>Enviando solicitudes manualmente</li>
+        </ol>
+        <p><strong>Si te puedes saltar la seguridad de las validaciones de 
+            JavaScript, entonces ¿por qué la primera pregunta dice que es 
+            una buena práctica?</strong></p>
+        <ol>
+            <li>Mejorar experiencia de usuario.</li>
+            <li>Reduccion de carga en el servidor.</li>
+            <li>Interfaz mas interactiva.</li>
+        </ol>
+    </section>
+
+    <footer class="section">
+        <div id="infoPersonal"> 
+            <h2 class="title is-4">Mi información:</h2>
+            <p>Frida Xcaret Vargas Trejo.</p>
+            <p>A01707168</p>
+            <a href="mailto:A01707168@tec.mx">Mi correo</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let totalPrice = 0;
+            const totalElement = document.getElementById("total-price");
+
+            document.querySelectorAll(".add-to-cart").forEach(button => {
+                button.addEventListener("click", function () {
+                    let price = parseInt(this.getAttribute("data-price"));
+                    totalPrice += price;
+                    totalElement.textContent = `$${totalPrice}`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

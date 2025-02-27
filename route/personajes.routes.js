@@ -69,5 +69,12 @@ router.post('/personajes/agregar', (request, response, next) => {
 
     response.send(html);
 });
+
+const path = require('path');
+
+router.get('/mostrar', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+});
+
 module.exports = router;
 

@@ -1,1 +1,1 @@
-/routes/Sonny
+/route/personajes.routes
