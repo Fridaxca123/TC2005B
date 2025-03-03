@@ -9,7 +9,7 @@ const html_footer = `</body></html>`;
 const html_content_form = ``;
 
 // Arreglo para almacenar personajes
-const Terurin = [];
+const Ternurin = [];
 
 //Cuando se registra un middleware con app.get(), 
 //el middleware sólo se registra para el método HTTP GET
@@ -27,7 +27,7 @@ router.post('/agregar', (request, response, next) => {
     console.log(Ternurin);
 
     let html = html_header;
-    for (let personaje of Terurin) { // Usamos Terurin que es donde estamos agregando nombres.
+    for (let personaje of Ternurin) { // Usamos Terurin que es donde estamos agregando nombres.
         html += html_card_header;
         html += personaje; // Insertamos el nombre del personaje.
         html += html_card_footer;
