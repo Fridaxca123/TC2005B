@@ -1,5 +1,17 @@
-<h1>Bienvenido a ternushop!</h1>
-    <form method="POST">
-        <input type="text" name="personaje">
-        <button type="submit">Enviar</button>
-    </form>
+<div class="columns">
+    <div class="column">
+      <form action="/personajes/agregar" method="POST">
+        <label for="nombre" class="label">Nombre del personaje</label>
+        <input
+          class="input is-primary"
+          type="text"
+          placeholder="Nombre"
+          id="nombre"
+          name="nombre"
+          required
+        />
+        <br><br>
+        <input type="submit" id="boton_personaje" class="button is-primary" value="Guardar personaje">
+      </form>
+    </div>
+</div>

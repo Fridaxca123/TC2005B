@@ -1,42 +1,38 @@
-const path = require('path');
 const express = require('express');
 const app = express();
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(bodyParser.urlencoded({ extended: false }));
-
-// Middleware global
+//Middleware
 app.use((request, response, next) => {
     console.log('Middleware!');
-    next();
+
+    //Le permite a la petición avanzar hacia el siguiente middleware
+    next(); 
 });
 
-// Middleware específico para la ruta /chewy
+//Este middleware se registra sólo en la ruta /chewy
 app.use('/chewy', (request, response, next) => {
     response.send("Hola desde la ruta /chewy");
 });
 
-// Importar rutas
-const rutasPersonajes = require('./route/personajes.routes');
-const rutasMain = require('./route/main.routes');
+const personajesRoutes = require('./routes/personajes.routes');
 
-app.use('/personajes', rutasPersonajes);
-app.use('/', rutasMain);
+app.use('/personajes', personajesRoutes);
 
-// Manejo de error 404 para rutas no encontradas
+
 app.use((request, response, next) => {
-    response.status(404).send("Error 404: Página no encontrada");
+    console.log('Otro middleware!');
+    
+    //Manda la respuesta
+    response.send('¡Hola mundo!'); 
 });
 
-// Iniciar el servidor
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+app.listen(3000);
