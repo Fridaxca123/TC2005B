@@ -1,1 +1,0 @@
-/route/personajes.routes

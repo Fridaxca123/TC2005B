@@ -1,7 +1,7 @@
 {
-  "name": "tc2005b",
+  "name": "chewy",
   "version": "1.0.0",
-  "description": "laboratorios de TC",
+  "description": "Laboratorios de TC2005B feb-jun 2025 QRO",
   "main": "app.js",
   "scripts": {
     "start": "nodemon",
@@ -9,21 +9,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Fridaxca123/TC2005B.git"
+    "url": "git+https://bitbucket.org/ejuarez/chewy.git"
   },
   "keywords": [
-    "Tc2005B"
+    "TC2005B"
   ],
-  "author": "Frida Vargas",
+  "author": "Eduardo Juárez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Fridaxca123/TC2005B/issues"
+    "url": "https://bitbucket.org/ejuarez/chewy/issues"
   },
-  "homepage": "https://github.com/Fridaxca123/TC2005B#readme",
+  "homepage": "https://bitbucket.org/ejuarez/chewy#readme",
   "devDependencies": {
     "nodemon": "^3.1.9"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1"
   }
 }
+
