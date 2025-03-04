@@ -28,3 +28,8 @@ exports.get_mostrar = (request, response, next) => {
     const path = require('path');
     response.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
 };
+
+//get_agregar(): Muestra un formulario para agregar un personaje.
+//post_agregar(): Toma los datos del formulario y los guarda en la lista.
+//get_mostrar(): Muestra una vista con los personajes guardados.
+//get_lista(): Devuelve los personajes en formato JSON (útil para APIs).

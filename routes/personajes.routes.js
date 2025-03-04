@@ -17,3 +17,8 @@ router.get('/mostrar', personajes_controller.get_mostrar);
 router.get('/', personajes_controller.get_lista);
 
 module.exports = router;
+
+//GET /personajes/agregar → Muestra el formulario para agregar un personaje.
+//POST /personajes/agregar → Agrega un personaje.
+//GET /personajes/mostrar → Muestra los personajes guardados.
+//GET /personajes/ → Devuelve todos los personajes en JSON.
