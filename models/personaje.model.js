@@ -1,3 +1,4 @@
+const db = require ('../util/database');
 const personajes = [];
 
 module.exports = class Personaje {
@@ -9,7 +10,14 @@ module.exports = class Personaje {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        personajes.push(this);
+        db.execute('INSERT INTO chewy (nombre) VALUES (?)', [this.nombre])
+        .then(()=> {
+            console.log(`chewy ${this.nombre} guardado`);
+        })
+        .catch ((error) => {
+            console.log(error);
+        });
+
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
