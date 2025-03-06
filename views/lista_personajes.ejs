@@ -1,5 +1,11 @@
 <%- include('includes/_header.ejs') %>
 
+<% if(info != '') { %>
+    <div class="notification is-info">
+        <%= info %>
+    </div>
+<% } %>
+
 <a class="button is-primary" href="/personajes/agregar">
     Agregar personaje
 </a>

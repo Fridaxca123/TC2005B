@@ -1,5 +1,6 @@
-const db = require ('../util/database');
-const personajes = [];
+const db = require('../util/database');
+
+
 
 module.exports = class Personaje {
 
@@ -10,22 +11,16 @@ module.exports = class Personaje {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        db.execute('INSERT INTO chewy (nombre) VALUES (?)', [this.nombre])
-        .then(()=> {
-            console.log(`chewy ${this.nombre} guardado`);
-        })
-        .catch ((error) => {
-            console.log(error);
-        });
-
+        return db.execute('INSERT INTO chewy(nombre) VALUES (?)', [this.nombre]);
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-        return personajes;
+        return db.execute('SELECT * FROM chewy');
     }
 
 }
+
 
 //Se define la clase Personaje, que representa un personaje en la aplicación.
 //constructor(mi_nombre): Se usa para crear un nuevo personaje con un nombre.
