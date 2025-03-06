@@ -32,3 +32,10 @@ app.use((request, response, next) => {
 });
 
 app.listen(3000);
+
+//Se configura Express y se habilitan archivos estáticos (public).
+//Se define EJS como motor de plantillas para generar HTML dinámico.
+//Se usa body-parser para procesar formularios.
+//Se registra middleware para mostrar mensajes en la consola.
+//Se importa y usa el módulo de rutas (personajesRoutes).
+//Se inicia el servidor en el puerto 3000.
