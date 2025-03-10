@@ -1,11 +1,12 @@
-const { info } = require('console');
-const Personaje = require('../models/personaje.model');
+const Personaje = require('../models/personaje.model'); 
+
 
 exports.get_agregar = (request, response, next) => {
     console.log(request.session);
     response.render('agregar_personaje', {
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
+        csrfToken: request.csrfToken(),
     });
 };
 
@@ -27,8 +28,11 @@ exports.get_lista = (request, response, next) => {
     if (request.session.info) {
         request.session.info = '';
     }
-    Personaje.fetchAll()
+
+    Personaje.fetch(request.params.id)
         .then(([rows, fielData]) => {
+            console.log(fielData);
+            console.log(rows);
             response.render('lista_personajes', {
                 personajes: rows,
                 isLoggedIn: request.session.isLoggedIn || false,
