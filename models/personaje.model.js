@@ -9,16 +9,16 @@ module.exports = class Personaje {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        return db.execute('INSERT INTO personajes(nombre) VALUES (?)', [this.nombre]);
+        return db.execute('INSERT INTO chewy (nombre) VALUES (?)', [this.nombre]);
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-        return db.execute('SELECT * FROM personajes');
+        return db.execute('SELECT * FROM chewy');
     }
 
     static fetchOne(id) {
-        return db.execute('SELECT * FROM personajes WHERE id=?', [id]);
+        return db.execute('SELECT * FROM chewy WHERE id=?', [id]);
     }
 
     static fetch(id) {
