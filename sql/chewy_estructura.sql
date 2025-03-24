@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 10, 2025 at 05:16 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.3.23
+-- Servidor: localhost
+-- Tiempo de generación: 06-03-2025 a las 16:44:00
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `personajes`
 --
 
-CREATE TABLE `chewy` (
+CREATE TABLE `personajes` (
   `id` int(11) NOT NULL,
   `nombre` varchar(250) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
@@ -40,7 +40,7 @@ CREATE TABLE `chewy` (
 --
 -- Indices de la tabla `personajes`
 --
-ALTER TABLE `chewy`
+ALTER TABLE `personajes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -50,7 +50,7 @@ ALTER TABLE `chewy`
 --
 -- AUTO_INCREMENT de la tabla `personajes`
 --
-ALTER TABLE `chewy`
+ALTER TABLE `personajes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

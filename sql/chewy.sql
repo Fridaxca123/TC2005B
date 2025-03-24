@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-03-2025 a las 16:40:21
+-- Tiempo de generación: 13-03-2025 a las 16:19:29
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `chewy`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `fuerza`
+--
+
+CREATE TABLE `fuerza` (
+  `id` int(11) NOT NULL,
+  `nivel` varchar(40) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `personajes`
+--
+
+CREATE TABLE `personajes` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(250) NOT NULL,
+  `id_fuerza` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
 
@@ -60,6 +85,19 @@ CREATE TABLE `rol_privilegio` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `username` varchar(40) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario_rol`
 --
 
@@ -72,6 +110,19 @@ CREATE TABLE `usuario_rol` (
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `fuerza`
+--
+ALTER TABLE `fuerza`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `personajes`
+--
+ALTER TABLE `personajes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_fuerza` (`id_fuerza`);
 
 --
 -- Indices de la tabla `privilegios`
@@ -93,6 +144,13 @@ ALTER TABLE `rol_privilegio`
   ADD KEY `privilegio_id` (`privilegio_id`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- Indices de la tabla `usuario_rol`
 --
 ALTER TABLE `usuario_rol`
@@ -102,6 +160,18 @@ ALTER TABLE `usuario_rol`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `fuerza`
+--
+ALTER TABLE `fuerza`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `personajes`
+--
+ALTER TABLE `personajes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `privilegios`
@@ -116,8 +186,20 @@ ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `personajes`
+--
+ALTER TABLE `personajes`
+  ADD CONSTRAINT `personajes_ibfk_1` FOREIGN KEY (`id_fuerza`) REFERENCES `fuerza` (`id`);
 
 --
 -- Filtros para la tabla `rol_privilegio`

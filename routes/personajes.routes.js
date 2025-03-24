@@ -22,8 +22,3 @@ router.get('/:id', isAuth, canViewPersonaje, personajes_controller.get_lista);
 router.get('/', isAuth, canViewPersonaje, personajes_controller.get_lista);
 
 module.exports = router;
-
-//GET /personajes/agregar → Muestra el formulario para agregar un personaje.
-//POST /personajes/agregar → Agrega un personaje.
-//GET /personajes/mostrar → Muestra los personajes guardados.
-//GET /personajes/ → Devuelve todos los personajes en JSON.
