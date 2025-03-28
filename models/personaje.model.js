@@ -41,4 +41,12 @@ module.exports = class Personaje {
         }
     }
 
+    static find(valor) {
+        return db.execute(`
+            SELECT * 
+            FROM personajes p, fuerza f
+            WHERE p.id_fuerza=f.id AND p.nombre LIKE ?`, 
+            ['%' + valor + '%']);
+    }
+
 }

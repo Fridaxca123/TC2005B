@@ -17,6 +17,28 @@ app.use(session({
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+const multer = require('multer');
+
+//fileStorage: Es nuestra constante de configuración para manejar el almacenamiento
+const fileStorage = multer.diskStorage({
+    destination: (request, file, callback) => {
+        //'uploads': Es el directorio del servidor donde se subirán los archivos 
+        callback(null, 'public/uploads');
+    },
+    filename: (request, file, callback) => {
+        //aquí configuramos el nombre que queremos que tenga el archivo en el servidor, 
+        //para que no haya problema si se suben 2 archivos con el mismo nombre concatenamos el timestamp
+        callback(null, new Date().getMilliseconds() + file.originalname);
+    },
+});
+
+//En el registro, pasamos la constante de configuración y
+//usamos single porque es un sólo archivo el que vamos a subir, 
+//pero hay diferentes opciones si se quieren subir varios archivos. 
+//'archivo' es el nombre del input tipo file de la forma
+app.use(multer({ storage: fileStorage }).single('archivo')); 
 
 const csrf = require('csurf');
 const csrfProtection = csrf();
@@ -36,10 +58,4 @@ app.use((request, response, next) => {
 });
 
 app.listen(3000);
-
-//Se configura Express y se habilitan archivos estáticos (public).
-//Se define EJS como motor de plantillas para generar HTML dinámico.
-//Se usa body-parser para procesar formularios.
-//Se registra middleware para mostrar mensajes en la consola.
-//Se importa y usa el módulo de rutas (personajesRoutes).
-//Se inicia el servidor en el puerto 3000.
+                    
